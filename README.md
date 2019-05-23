@@ -62,7 +62,7 @@ const puffsUtil = require('puffscionjs-util')
 function generateDirectAddress () {
   while(true) {
     var privateKey = crypto.randomBytes(32) // or your favourite other random method
-    if (ethUtil.privateToAddress(privateKey)[0] <= 3) {
+    if (puffsUtil.privateToAddress(privateKey)[0] <= 3) {
       return privateKey
     }
   }
