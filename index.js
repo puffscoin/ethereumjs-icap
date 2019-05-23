@@ -27,7 +27,7 @@ ICAP.decodeBBAN = function (bban) {
       client: bban.slice(7, 16)
     }
   } else {
-    throw new Error('Not a valid Ethereum BBAN')
+    throw new Error('Not a valid PUFFScoin BBAN')
   }
 }
 
@@ -36,7 +36,7 @@ ICAP.encodeBBAN = function (bban) {
     if (bban.asset.length !== 3 ||
         bban.institution.length !== 4 ||
         bban.client.length !== 9) {
-      throw new Error('Invalid \'indirect\' Ethereum BBAN')
+      throw new Error('Invalid \'indirect\' PUFFScoin BBAN')
     }
     return [ bban.asset, bban.institution, bban.client ].join('').toUpperCase()
   } else if ((bban.length === 42) && (bban[0] === '0') && (bban[1] === 'x')) {
@@ -121,7 +121,7 @@ ICAP.decode = function (iban, novalidity) {
 }
 
 /*
- * Convert Ethereum address to ICAP
+ * Convert PUFFScoin address to ICAP
  * @method fromAddress
  * @param {String} address Address as a hex string.
  * @param {bool} nonstd Accept address which will result in non-standard IBAN
