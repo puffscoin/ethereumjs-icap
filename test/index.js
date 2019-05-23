@@ -10,8 +10,8 @@ describe('.decodeBBAN()', function () {
     assert.strictEqual(ICAP.decodeBBAN('7SS84LEE90PIULMR3DYBGOVBNJN5N14'), '0x42c5496aee77c1ba1f0854206a26dda82a81d6d8')
   })
   it('should work for \'indirect\'', function () {
-    assert.deepStrictEqual(ICAP.decodeBBAN('ETHXREGGAVOFYORK'), {
-      asset: 'ETH',
+    assert.deepStrictEqual(ICAP.decodeBBAN('PUFFSXREGGAVOFYORK'), {
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     })
@@ -35,11 +35,11 @@ describe('.encodeBBAN()', function () {
   })
   it('should work for \'indirect\'', function () {
     assert.deepStrictEqual(ICAP.encodeBBAN({
-      asset: 'ETH',
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     }),
-    'ETHXREGGAVOFYORK')
+    'PUFFSXREGGAVOFYORK')
   })
   it('shouldn\'t allow non-standard hex input', function () {
     assert.throws(function () {
@@ -68,8 +68,8 @@ describe('.decode()', function () {
     assert.strictEqual(ICAP.decode('XE870Z0SGY63X3UEPSSD6U9B3U9VIUOM1XP'), '0x08540829e2918aeb912b233b1e96366f075fe34d')
   })
   it('should work for \'indirect\'', function () {
-    assert.deepStrictEqual(ICAP.decode('XE81ETHXREGGAVOFYORK'), {
-      asset: 'ETH',
+    assert.deepStrictEqual(ICAP.decode('XE81PUFFSXREGGAVOFYORK'), {
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     })
@@ -89,11 +89,11 @@ describe('.encode()', function () {
   })
   it('should work for \'indirect\'', function () {
     assert.deepStrictEqual(ICAP.encode({
-      asset: 'ETH',
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     }),
-    'XE81ETHXREGGAVOFYORK')
+    'XE81PUFFSXREGGAVOFYORK')
   })
   it('shouldn\'t allow non-standard hex input', function () {
     assert.throws(function () {
@@ -134,11 +134,11 @@ describe('.fromAddress()', function () {
 describe('.fromAsset()', function () {
   it('should work for proper input', function () {
     assert.deepStrictEqual(ICAP.fromAsset({
-      asset: 'ETH',
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     }),
-    'XE81ETHXREGGAVOFYORK')
+    'XE81PUFFSXREGGAVOFYORK')
   })
 })
 
@@ -151,15 +151,15 @@ describe('.toAddress()', function () {
   })
   it('shouldn\'t work with an asset', function () {
     assert.throws(function () {
-      ICAP.toAddress('XE81ETHXREGGAVOFYORK')
+      ICAP.toAddress('XE81PUFFSXREGGAVOFYORK')
     })
   })
 })
 
 describe('.toAsset()', function () {
   it('should work for proper input', function () {
-    assert.deepStrictEqual(ICAP.toAsset('XE81ETHXREGGAVOFYORK'), {
-      asset: 'ETH',
+    assert.deepStrictEqual(ICAP.toAsset('XE81PUFFSXREGGAVOFYORK'), {
+      asset: 'PUFFS',
       institution: 'XREG',
       client: 'GAVOFYORK'
     })
@@ -185,13 +185,13 @@ describe('.isAddress()', function () {
     assert.strictEqual(ICAP.isAddress('XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'), true)
   })
   it('should return false on invalid input', function () {
-    assert.strictEqual(ICAP.isAddress('XE81ETHXREGGAVOFYORK'), false)
+    assert.strictEqual(ICAP.isAddress('XE81PUFFSXREGGAVOFYORK'), false)
   })
 })
 
 describe('.isAsset()', function () {
   it('should return true on proper input', function () {
-    assert.strictEqual(ICAP.isAsset('XE81ETHXREGGAVOFYORK'), true)
+    assert.strictEqual(ICAP.isAsset('XE81PUFFSXREGGAVOFYORK'), true)
   })
   it('should return false on invalid input', function () {
     assert.strictEqual(ICAP.isAsset('XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'), false)
