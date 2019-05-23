@@ -49,7 +49,7 @@ ICAP.encodeBBAN = function (bban) {
 
     return bs36.encode(Buffer.from(bban, 'hex'))
   } else {
-    throw new Error('Not a valid input for Ethereum BBAN')
+    throw new Error('Not a valid input for PUFFScoin BBAN')
   }
 }
 
