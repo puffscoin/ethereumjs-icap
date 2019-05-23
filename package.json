@@ -1,7 +1,7 @@
 {
-  "name": "ethereumjs-icap",
+  "name": "puffscoinjs-icap",
   "version": "0.3.2",
-  "description": "Utilities for handling ICAP (Ethereum in IBAN) encoding",
+  "description": "Utilities for handling ICAP (PUFFScion in IBAN) encoding",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover _mocha",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethereumjs/ethereumjs-icap.git"
+    "url": "https://github.com/puffscoin/puffscoinjs-icap.git"
   },
   "keywords": [
     "ethereum",
@@ -21,9 +21,9 @@
   "author": "Alex Beregszaszi <alex@rtfs.hu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-icap/issues"
+    "url": "https://github.com/puffscoin/puffscoinjs-icap/issues"
   },
-  "homepage": "https://github.com/ethereumjs/ethereumjs-icap",
+  "homepage": "https://github.com/puffscoin/puffscoinjs-icap",
   "dependencies": {
     "base-x": "^3.0.0"
   },
