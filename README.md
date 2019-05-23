@@ -1,9 +1,4 @@
-# ethereumjs-icap
-
-[![NPM Package](https://img.shields.io/npm/v/ethereumjs-icap.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-icap)
-[![Build Status](https://img.shields.io/travis/ethereumjs/ethereumjs-icap.svg?branch=master&style=flat-square)](https://travis-ci.org/ethereumjs/ethereumjs-icap)
-[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-icap.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-icap)
-[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode
+# puffscionjs-icap
 
 Utilities for handling [ICAP](https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol) addresses.
 
@@ -35,18 +30,18 @@ The `nonstd` parameter of `fromAddress`, when set to true, will turn on support 
 
 ```js
 ICAP.fromAsset({
-  asset: 'ETH',
+  asset: 'PUFFS',
   institution: 'XREG',
   client: 'GAVOFYORK'
 })
-// returns 'XE81ETHXREGGAVOFYORK'
+// returns 'XE81PUFFSXREGGAVOFYORK'
 
 ICAP.fromAddress('0x00c5496aee77c1ba1f0854206a26dda82a81d6d8')
 // returns 'XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'
 
-ICAP.toAsset('XE81ETHXREGGAVOFYORK')
+ICAP.toAsset('XE81PUFFSXREGGAVOFYORK')
 // returns {
-//   asset: 'ETH',
+//   asset: 'PUFFS',
 //   institution: 'XREG',
 //   client: 'GAVOFYORK'
 // }
@@ -63,7 +58,7 @@ That upper limit is `0x03ffffffffffffffffffffffffffffffffffffff` or `XE91GTJRJEU
 The following simple bruteforce code can be used to generate such addresses:
 
 ```js
-const ethUtil = require('ethereumjs-util')
+const puffsUtil = require('puffscionjs-util')
 function generateDirectAddress () {
   while(true) {
     var privateKey = crypto.randomBytes(32) // or your favourite other random method
@@ -74,4 +69,4 @@ function generateDirectAddress () {
 }
 ```
 
-Alternatively [`ethereumjs-wallet`](http://npmjs.com/packages/ethereumjs-wallet) can be used to generate compatible addresses.
+Alternatively [`puffscionjs-wallet`](https://github.com/puffscoin/puffscionjs-wallet) can be used to generate compatible addresses.
