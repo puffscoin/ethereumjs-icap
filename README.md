@@ -1,6 +1,6 @@
 # puffscionjs-icap
 
-Utilities for handling [ICAP](https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol) addresses.
+Utilities for handling ICAP addresses(https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol).
 
 It works in Node.js as well as in the browser via `browserify`. When minified for a browser, it should be less than 4K in size.
 
@@ -24,7 +24,7 @@ The `print` parameter above, when set to true, will create an IBAN in the *print
 
 The `address` parameter only supports `0x` prefixed input and will include that in the output.
 
-The `nonstd` parameter of `fromAddress`, when set to true, will turn on support for the *basic ICAP format* generating an invalid IBAN, but encoding the entire 160 bits of an Ethereum address.
+The `nonstd` parameter of `fromAddress`, when set to true, will turn on support for the *basic ICAP format* generating an invalid IBAN, but encoding the entire 160 bits of a PUFFScoin wallet address.
 
 ## Examples
 
